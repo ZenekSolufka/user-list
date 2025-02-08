@@ -1,11 +1,6 @@
-import './SortButton.css'
-
 const SortButton = ({ handleSort }) => {
   return (
-    <button
-      onClick={handleSort}
-      className="bg-blue-500 text-white p-2 rounded mt-2 w-full"
-    >
+    <button onClick={handleSort} className="sort-button">
       Sortuj według imienia
     </button>
   );

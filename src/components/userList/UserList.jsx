@@ -1,6 +1,4 @@
-import './UserList.css'
-import { UserItem } from '../imports';
-
+import { UserItem } from "../imports";
 
 const UserList = ({ users }) => (
   <ul className="border rounded p-4 shadow-md">

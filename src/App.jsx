@@ -1,8 +1,7 @@
-import { SortButton, SearchBar, UserList} from './components/imports'
-import './App.css'
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-
+import { SortButton, SearchBar, UserList } from "./components/imports";
+import "./App.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -11,7 +10,8 @@ const App = () => {
   const [isSorted, setIsSorted] = useState(false);
 
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/users")
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
         setUsers(response.data);
         setFilteredUsers(response.data);
@@ -35,10 +35,12 @@ const App = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-4">
+    <div className="users-wrapper">
       <h1 className="text-xl font-bold mb-4">Lista Użytkowników</h1>
-      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <SortButton handleSort={handleSort} />
+      <div className="action-wrapper">
+        <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <SortButton handleSort={handleSort} />
+      </div>
       <UserList users={filteredUsers} />
     </div>
   );

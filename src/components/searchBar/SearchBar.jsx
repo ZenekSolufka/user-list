@@ -1,5 +1,3 @@
-import './SearchBar.css'
-
 const SearchBar = ({ searchQuery, setSearchQuery }) => {
   return (
     <input
@@ -7,7 +5,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
       placeholder="Szukaj użytkownika..."
       value={searchQuery}
       onChange={(e) => setSearchQuery(e.target.value)}
-      className="border rounded p-2 w-full mb-2"
+      className="search-input"
     />
   );
 };
